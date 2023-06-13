@@ -70,9 +70,11 @@ class Square:
         """
         print to square made of #
         """
-        if self.size == 0 or self.position[1] > 0:
+        if self.size == 0:
             print()
         else:
+            if self.position[1] > 0:
+                print()
             for column in range(self.size):
                 for lines in range(self.position[0]):
                     print(" ", end="")
