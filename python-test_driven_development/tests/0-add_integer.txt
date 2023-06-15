@@ -1,43 +1,106 @@
 >>> add_integer = __import__('0-add_integer').add_integer
 
 SUCCESS CASES:
-test the addition two arguments with signed and unsigned int or float:
-
->>> add_integer(1, 4)
-5
->>> add_integer(-1, 4)
-3
->>> add_integer(5.5, 6.9)
-11
->>> add_integer(10)
-108
+    test the addition two arguments with signed and unsigned int or float:
+        >>> add_integer(1, 4)
+        5
+        >>> add_integer(-1, 4)
+        3
+        >>> add_integer(-2, -5)
+        -7
+        >>> add_integer(5.5, 6.9)
+        11
+        >>> add_integer(10)
+        108
 
 FAIL CASES:
+    test without arguments:
+        >>> add_integer()
+        Traceback (most recent call last):
+        ...
+        TypeError: add_integer() missing 1 required positional argument: 'a'
 
-test without arguments:
->>> add_integer()
-Traceback (most recent call last):
-...
-TypeError: add_integer() missing 1 required positional argument: 'a'
+    test None arguments:
+        >>> add_integer(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
 
-test None arguments:
->>> add_integer(None)
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
+        >>> add_integer(None, None)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
 
->>> add_integer(None, None)
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
+    test other data types:
+        >>> add_integer("hello", 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
 
-test other data types:
->>> add_integer("hello", 2)
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
+        >>> add_integer(2, "hello")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
 
->>> add_integer(2, "hello")
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
+        >>> add_integer("2", "hello")
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+        >>> add_integer([2, 4], 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+        >>> add_integer(4, [2, 4])
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+        >>> add_integer(4, (2, 4))
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+        >>> add_integer((4, 2), 4)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+    test extra arguments:
+        >>> add_integer(4, 5, 6)
+        Traceback (most recent call last):
+        ...
+        TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+    test of numbers infinity:
+        >>> add_integer(1e2000, 4)
+        Traceback (most recent call last):
+        ...
+        OverflowError: cannot convert float infinity to integer
+
+        >>> add_integer(-1e2000, 4)
+        Traceback (most recent call last):
+        ...
+        OverflowError: cannot convert float infinity to integer
+
+        >>> add_integer(float("inf"))
+        Traceback (most recent call last):
+        ...
+        OverflowError: cannot convert float infinity to integer
+
+        >>> add_integer(float("-inf"))
+        Traceback (most recent call last):
+        ...
+        OverflowError: cannot convert float infinity to integer
+
+    test for numbers "NaN":
+        >>> add_integer("NaN")
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+        >>> add_integer(float("NaN"))
+        Traceback (most recent call last):
+        ...
+        ValueError: cannot convert float NaN to integer
