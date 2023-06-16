@@ -108,3 +108,8 @@ class Rectangle:
     def square(cls, size=0):
         """construct a date from returns a new Rectangle"""
         return cls(size, size)
+        """
+        THIS is other FORM for the SAME RESULT in the return:
+        width, height = size, size
+        return cls(width, height)
+        """
