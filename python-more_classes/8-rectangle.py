@@ -79,7 +79,8 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        resu = "\n".join(["#" * self.__width for rows in range(self.__height)])
+        symbol = str(self.print_symbol)
+        resu = "\n".join([symbol * self.__width for i in range(self.__height)])
         return resu
 
     def __repr__(self):
@@ -102,3 +103,9 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
+        """
+        INSTEAD of AREA, you could have used the PERIMETER function:
+        if rect_1.perimeter() >= rect_2.perimeter():
+            return rect_1
+        return rect_2
+        """
