@@ -66,7 +66,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return (self.__width + self.__height) * 2
-    
+
     def __str__(self):
         """
         Prints rectangle with #
@@ -75,9 +75,13 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
+        """
         result = ""
         for column in range(self.__height):
             for row in range(self.__width):
                 result += "#"
             result += "\n"
+        return result
+        """
+        result = "\n".join(["#" * self.__width for rows in range(self.__height)])
         return result
