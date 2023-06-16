@@ -1,0 +1,38 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+FAILURE CASES:
+
+Without Arguments:
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+With None Args:
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+When different data types:
+
+    >>> text_indentation(133, ["luis. Hernandez"])
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+    >>> text_indentation(133)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation(["Non autem hoc: igitur ne illud quidem."])
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    text_indentation({"Non autem hoc: igitur ne illud quidem."})
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
