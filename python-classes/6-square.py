@@ -74,7 +74,8 @@ class Square:
             print()
         else:
             if self.position[1] > 0:
-                print()
+                for i in range(self.position[1]):
+                    print()
             for column in range(self.size):
                 for lines in range(self.position[0]):
                     print(" ", end="")
