@@ -83,5 +83,5 @@ class Rectangle:
             result += "\n"
         return result
         """
-        result = "\n".join(["#" * self.__width for rows in range(self.__height)])
+        resu = "\n".join(["#" * self.__width for rows in range(self.__height)])
         return result
