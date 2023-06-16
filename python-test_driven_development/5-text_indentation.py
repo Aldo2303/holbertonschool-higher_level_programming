@@ -14,7 +14,7 @@ def text_indentation(text):
     """
     if type(text) is not str:
         raise TypeError("text must be a string")
-    
+
     flag = 0
     no_print_space = ""
     for letter in range(len(text)):
