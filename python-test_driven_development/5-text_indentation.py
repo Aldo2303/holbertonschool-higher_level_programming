@@ -15,15 +15,13 @@ def text_indentation(text):
     if type(text) is not str:
         raise TypeError("text must be a string")
 
-    flag = 0
-    no_print_space = ""
-    for letter in range(len(text)):
-        print(text[letter], end="")
-        if text[letter] == "." or text[letter] == "?" or text[letter] == ":":
-            flag = 1
-        elif flag == 1:
-            if text[letter] == " ":
-                no_print_space = "".join(text[letter])
-                print(no_print_space)
-                print()
-            flag = 0
+    char_before = 0
+    for i in range(len(text)):
+        if char_before is 1:
+            char_before = 0
+            if text[i] == " ":
+                continue
+        print(text[i], end="")
+        if text[i] in [".", "?", ":"]:
+            print("\n")
+            char_before = 1
