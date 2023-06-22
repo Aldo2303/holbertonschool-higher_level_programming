@@ -45,6 +45,12 @@ Traceback (most recent call last):
 ValueError: Hello must be greater than 0
 
 >>> bg = BaseGeometry()
+>>> bg.integer_validator("Hello", "45")
+Traceback (most recent call last):
+...
+TypeError: Hello must be an integer
+
+>>> bg = BaseGeometry()
 >>> bg.integer_validator("Hello", "world")
 Traceback (most recent call last):
 ...
@@ -64,6 +70,12 @@ TypeError: Hello must be an integer
 
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("Hello", {45, 67})
+Traceback (most recent call last):
+...
+TypeError: Hello must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("Hello", {"key": 45})
 Traceback (most recent call last):
 ...
 TypeError: Hello must be an integer
