@@ -9,12 +9,13 @@ Rectangle = __import__('9-rectangle').Rectangle
 class Square(Rectangle):
     """
     This is a subclass of the class BaseGeometry
-    Private method: size
+    Method Private:
+        __init__(self, size)
     """
     def __init__(self, size):
         """
-        method that builds a square and used interger_validator
-        argument:
+        method: size that builds a square and used interger_validator
+        argument private:
             size: contains 2 arguments (width and height) of area the square
         """
         self.integer_validator("size", size)
