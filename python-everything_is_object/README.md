@@ -1,3 +1,10 @@
+Python - Everything is object:
+This project is a little bit different than the usual projects. The first part is only questions about Python’s specificity.
+In the end, we should have made a post on linkedin.com about what are mutable and immutable objects.
+I invite you to see how the post turned out! 
+Link: https://www.linkedin.com/posts/aldo-daniel-s%C3%A1nchez-gonz%C3%A1lez-3a604b280_activity-7077754748354924544-puL8?utm_source=share&utm_medium=member_desktop
+
+TASK:
 0-answer.txt:
 What function would you use to print the type of an object?
 
