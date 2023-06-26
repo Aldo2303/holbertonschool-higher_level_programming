@@ -1,4 +1,4 @@
- <h3 align="center">Python - Almost a circle</h3>
+ <h1 align="center">Python - Almost a circle</h1>
 
  ## About The Project
 
