@@ -13,6 +13,7 @@ class Base:
         __init__(self, id)
     """
     __nb_objects = 0
+
     def __init__(self, id=None):
         """
         class constructor. assigns id when created a new object.
