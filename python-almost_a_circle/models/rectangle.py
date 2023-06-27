@@ -3,6 +3,9 @@
 Module 2-class_rectangle
 """
 from models.base import Base
+"""
+import class Base
+"""
 
 
 class Rectangle(Base):
@@ -23,74 +26,74 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-        @property
-        def width(self):
-            """
-            getter
-            Return:
-                width of rectangle
-            """
-            return (self.__width)
+    @property
+    def width(self):
+        """
+        getter
+        Return:
+            width of rectangle
+        """
+        return (self.__width)
 
-        @width.setter
-        def width(self, width):
-            """
-            setter
-            attribute:
-                width of rectangle
-            """
-            self.__width = width
+    @property
+    def height(self):
+        """
+        getter
+        Return:
+        height of rectangle
+        """
+        return (self.__height)
 
-        @property
-        def height(self):
-            """
-            getter
-            Return:
-                height of rectangle
-            """
-            return (self.__height)
+    @property
+    def x(self):
+        """
+        getter
+        Return:
+            x for rectangle
+        """
+        return (self.__x)
 
-        @property
-        def x(self):
-            """
-            getter
-            Return:
-                x for rectangle
-            """
-            return (self.__x)
+    @property
+    def y(self):
+        """
+        getter
+        Return:
+            y for rectangle
+        """
+        return (self.__y)
 
-        @property
-        def y(self):
-            """
-            getter
-            Return:
-                y for rectangle
-            """
-            return (self.__y)
+    @width.setter
+    def width(self, width):
+        """
+        setter
+        attribute:
+            width of rectangle
+        """
+        self.__width = width
 
-        @height.setter
-        def width(self, height):
-            """
-            setter
-            attribute:
-                height of rectangle
-            """
-            self.__height = height
+    @height.setter
+    def height(self, height):
+        """
+        setter
+        attribute:
+            height of rectangle
+        """
+        self.__height = height
 
-        @x.setter
-        def width(self, x):
-            """
-            setter
-            attribute:
-                x for rectangle
-            """
-            self.__x = x
+    @x.setter
+    def x(self, x):
+        """
+        setter
+        attribute:
+            x for rectangle
+        """
+        self.__x = x
 
-        @y.setter
-        def width(self, y):
-            """
-            setter
-            attribute:
-                y for rectangle
-            """
-            self.__y = y
+    @y.setter
+    def y(self, y):
+        """
+        setter
+        attribute:
+            y for rectangle
+        """
+        self.__y = y
