@@ -5,7 +5,8 @@ Unittest for class Base
 import unittest
 from models.base import Base
 
-class TestMaxBase(unittest.TestCase):
+
+class Test_Base(unittest.TestCase):
     """unittests for the functions in class Base"""
 
     def test_int_id(self):
