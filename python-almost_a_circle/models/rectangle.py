@@ -128,7 +128,11 @@ class Rectangle(Base):
         public method: def display(self)
         that prints in stdout the Rectangle instance with the character #
         """
+        for a in range(self.y):
+            print()
         for column in range(self.__height):
+            for b in range(self.x):
+                print(" ", end="")
             for row in range(self.__width):
                 print("#", end="")
             print()
