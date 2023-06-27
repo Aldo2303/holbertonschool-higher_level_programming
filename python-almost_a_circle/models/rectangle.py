@@ -132,3 +132,14 @@ class Rectangle(Base):
             for row in range(self.__width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """
+        Update the class Rectangle
+        overriding the __str__ method
+        Return:
+            [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        return ("[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.__class__.__name__, self.id, self.__x, self.__y,
+            self.__width, self.__height))
