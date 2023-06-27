@@ -116,7 +116,19 @@ class Rectangle(Base):
 
     def area(self):
         """
+        public method: def area(self)
         Return:
             Area
         """
         return (self.__width * self.__height)
+
+    def display(self):
+        """
+        Update the class Rectangle
+        public method: def display(self)
+        that prints in stdout the Rectangle instance with the character #
+        """
+        for column in range(self.__height):
+            for row in range(self.__width):
+                print("#", end="")
+            print()
