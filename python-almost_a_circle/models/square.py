@@ -77,3 +77,16 @@ class Square(Rectangle):
                     self.x = value
                 if key == "y":
                     self.y = value
+
+    def to_dictionary(self):
+        """
+        Public method: def to_dictionary(self)
+        Return:
+            the dictionary representation of a Square
+        """
+        dictionary = {}
+        dictionary["id"] = self.id
+        dictionary["size"] = self.size
+        dictionary["x"] = self.x
+        dictionary["y"] = self.y
+        return (dictionary)
