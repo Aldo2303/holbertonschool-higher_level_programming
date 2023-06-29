@@ -69,6 +69,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r6.__str__(), "[Rectangle] (2) 3/4 - 15/2")
 
     def test_update_kwargs(self):
+        """check the method update"""
         r7 = Rectangle(10, 2, 3, 4, 12)
         r7.update(height=9)
         self.assertEqual(r7.__str__(), "[Rectangle] (12) 3/4 - 10/9")
@@ -76,6 +77,12 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r7.__str__(), "[Rectangle] (12) 8/4 - 5/9")
         r7.update(y=11, width=22, x=33, id=89)
         self.assertEqual(r7.__str__(), "[Rectangle] (89) 33/11 - 22/9")
+
+    def test_to_dictionary(self):
+        """check the method dictionary"""
+        r8 = Rectangle(10, 2, 3, 4, 12)
+        representation = {'id': 12, 'width': 10, 'height': 2, 'x': 3, 'y': 4}
+        self.assertEqual(r8.to_dictionary(), representation)
 
 
 if __name__ == "__main__":

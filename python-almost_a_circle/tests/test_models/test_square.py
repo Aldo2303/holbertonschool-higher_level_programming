@@ -67,6 +67,12 @@ class Test_Square(unittest.TestCase):
         s7 = Square(8, 7, 2, 89)
         self.assertEqual(s7.area(), 64)
 
+    def test_to_dictionary(self):
+        """check the method dictionary"""
+        s7 = Square(10, 2, 3, 12)
+        representation = {'id': 12, 'size': 10, 'x': 2, 'y': 3}
+        self.assertEqual(s7.to_dictionary(), representation)
+
 
 if __name__ == "__main__":
     unittest.main()
