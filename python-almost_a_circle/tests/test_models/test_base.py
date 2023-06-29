@@ -21,6 +21,18 @@ class Test_Base(unittest.TestCase):
         b1 = Base(None)
         self.assertEqual(b1.id, 1)
 
+    def test_json_string_dictionary(self):
+        list_dict = [{'id': 1, 'width': 10, 'height': 7, 'x': 2, 'y': 8}]
+        self.assertEqual(Base.to_json_string(list_dict),
+                         '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]')
+        
+        list_dict = []
+        self.assertEqual(Base.to_json_string(list_dict), "[]")
 
-if __name__ == "__main__":
+        list_dict = None
+        self.assertEqual(Base.to_json_string(list_dict), "[]")
+        
+
+
+if __name__ == '__main__':
     unittest.main()
