@@ -60,10 +60,22 @@ class Test_Rectangle(unittest.TestCase):
         r5 = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(r5.__str__(), "[Rectangle] (12) 2/1 - 4/6")
 
-    #def test_display(self):
-        """check the method display with int arg"""
-        #r6 = Rectangle(2, 3, 1, 2)
-        #self.assertEqual(r6.display(), "\n\n ##\n ##\n ##\n")
+    def test_update_args(self):
+        """check the method update with *args"""
+        r6 = Rectangle(10, 2, 3, 4, 12)
+        r6.update(2)
+        self.assertEqual(r6.__str__(), "[Rectangle] (2) 3/4 - 10/2")
+        r6.update(2, 15)
+        self.assertEqual(r6.__str__(), "[Rectangle] (2) 3/4 - 15/2")
+
+    def test_update_kwargs(self):
+        r7 = Rectangle(10, 2, 3, 4, 12)
+        r7.update(height=9)
+        self.assertEqual(r7.__str__(), "[Rectangle] (12) 3/4 - 10/9")
+        r7.update(width=5, x=8)
+        self.assertEqual(r7.__str__(), "[Rectangle] (12) 8/4 - 5/9")
+        r7.update(y=11, width=22, x=33, id=89)
+        self.assertEqual(r7.__str__(), "[Rectangle] (89) 33/11 - 22/9")
 
 
 if __name__ == "__main__":
