@@ -33,3 +33,22 @@ class Square(Rectangle):
         return ("[{:s}] ({:d}) {:d}/{:d} - {:d}".format(
             self.__class__.__name__, self.id, self.x, self.y,
             self.width))
+    
+    @property
+    def size(self):
+        """
+        getter
+        Return:
+            size of square
+        """
+        return (self.width)
+
+    @size.setter
+    def size(self, size):
+        """
+        setter
+        attribute:
+            size of square
+        """
+        self.width = size
+        self.height = size
