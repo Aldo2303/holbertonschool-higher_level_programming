@@ -12,7 +12,7 @@ class Test_Square(unittest.TestCase):
     def test_arguments(self):
         s1 = Square(2)
         self.assertEqual(s1.size, 2)
-        
+
         s2 = Square(2, 4)
         self.assertEqual(s2.width, 2)
         self.assertEqual(s2.height, 2)
@@ -24,7 +24,7 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(s3.x, 4)
         self.assertEqual(s3.y, 6)
 
-        s4= Square(2, 4, 6, 8)
+        s4 = Square(2, 4, 6, 8)
         self.assertEqual(s4.width, 2)
         self.assertEqual(s4.height, 2)
         self.assertEqual(s4.x, 4)
@@ -38,11 +38,11 @@ class Test_Square(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square(10, [2, 5], 0, 12)
         with self.assertRaises(TypeError):
-            Square(10, 2,{"k": 0}, 12)
+            Square(10, 2, {"k": 0}, 12)
         with self.assertRaises(TypeError):
             Square((10, 7), 2, 0, 12)
         with self.assertRaises(TypeError):
-            Square(10, 2,"hello", 12)
+            Square(10, 2, "hello", 12)
         with self.assertRaises(TypeError):
             Square(10, 2, {0}, 12)
 
@@ -72,6 +72,14 @@ class Test_Square(unittest.TestCase):
         s7 = Square(10, 2, 3, 12)
         representation = {'id': 12, 'size': 10, 'x': 2, 'y': 3}
         self.assertEqual(s7.to_dictionary(), representation)
+
+    def test_created_dictionary(self):
+        """check the creation a new instances with attr sett"""
+        s8 = Square.create(**{"id": 2, "size": 4, "x": 6, "y": 8})
+        self.assertEqual(s8.id, 2)
+        self.assertEqual(s8.size, 4)
+        self.assertEqual(s8.x, 6)
+        self.assertEqual(s8.y, 6)
 
 
 if __name__ == "__main__":

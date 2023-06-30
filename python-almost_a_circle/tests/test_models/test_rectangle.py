@@ -84,6 +84,13 @@ class Test_Rectangle(unittest.TestCase):
         representation = {'id': 12, 'width': 10, 'height': 2, 'x': 3, 'y': 4}
         self.assertEqual(r8.to_dictionary(), representation)
 
+    def test_created_dictionary(self):
+        """check the creation a new instances with attr sett"""
+        r9 = Rectangle.create(**{"id": 2, "width": 4, "height": 6})
+        self.assertEqual(r9.id, 2)
+        self.assertEqual(r9.width, 4)
+        self.assertEqual(r9.height, 6)
+
 
 if __name__ == "__main__":
     unittest.main()

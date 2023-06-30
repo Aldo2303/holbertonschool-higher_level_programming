@@ -22,16 +22,22 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(b1.id, 1)
 
     def test_json_string_dictionary(self):
-        list_dict = [{'id': 1, 'width': 10, 'height': 7, 'x': 2, 'y': 8}]
+        """check the representation of list to json"""
+        list_dict = [{'id': 1, 'width': 10, 'height': 7, 'x': 2}]
         self.assertEqual(Base.to_json_string(list_dict),
-                         '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]')
-        
+                         '[{"id": 1, "width": 10, "height": 7, "x": 2')
+
         list_dict = []
         self.assertEqual(Base.to_json_string(list_dict), "[]")
 
         list_dict = None
         self.assertEqual(Base.to_json_string(list_dict), "[]")
-        
+
+    def test_from_json_string_to_list(self):
+        """check the representation of json to list"""
+        json_str = '[{"id": 89, "width": 10, "height": 4}]'
+        self.assertEqual(Base.from_json_string(json_str),
+                         [{'id': 89, 'width': 10, 'height': 4}])
 
 
 if __name__ == '__main__':
