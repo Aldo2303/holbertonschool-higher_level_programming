@@ -62,7 +62,29 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+        adding the static method: def from_json_string(json_string)
+        arg:
+            json_string
+        Return:
+            the list of the JSON string representation json_string
+        """
         if json_string is None or json_string == "":
             return ([])
 
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        adding the class method: def create(cls, **dictionary)
+        arg:
+            dictionary: **dictionary must be used **kwargs of the method update
+        """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 2)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+
+        dummy.update(**dictionary)
+        return (dummy)
