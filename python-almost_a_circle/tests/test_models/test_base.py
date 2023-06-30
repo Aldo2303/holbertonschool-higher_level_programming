@@ -25,7 +25,7 @@ class Test_Base(unittest.TestCase):
         """check the representation of list to json"""
         list_dict = [{'id': 1, 'width': 10, 'height': 7, 'x': 2}]
         self.assertEqual(Base.to_json_string(list_dict),
-                         '[{"id": 1, "width": 10, "height": 7, "x": 2')
+                         '[{"id": 1, "width": 10, "height": 7, "x": 2}]')
 
         list_dict = []
         self.assertEqual(Base.to_json_string(list_dict), "[]")

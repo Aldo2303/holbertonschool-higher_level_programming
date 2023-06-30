@@ -79,7 +79,7 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(s8.id, 2)
         self.assertEqual(s8.size, 4)
         self.assertEqual(s8.x, 6)
-        self.assertEqual(s8.y, 6)
+        self.assertEqual(s8.y, 8)
 
 
 if __name__ == "__main__":
